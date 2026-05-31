@@ -1,118 +1,101 @@
-import { ShoppingBag } from "lucide-react";
-import React from "react";
 import { Link } from "react-router-dom";
-import bgimage from "../assets/hero-image.jpg";
-import { ArrowRight } from "lucide-react";
-import { Button } from "../components/ui/button";
+import { BadgeCheck } from "lucide-react";
 import Promosection from "../components/Promosection";
-import ProductPage from "./ProductPage";
-import Container from "../components/ui/Container";
-// import { Container } from "../components/ui/c";
-function Home() {
-  return (
-    <div className="flex flex-col min-h-screen">
-      <div className="relative bg-gray-50 overflow-hidden">
-      <Container>
-        <div className="py-12 lg:py-10 ">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="text-center lg:text-left mb-40">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-5 tracking-tight ">
-                Elevate Your Style This Season
-              </h1>
-              <p className="text-lg text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0 justify-start text-black/60 text-base font-normal  leading-snug">
-              Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button size="lg" className="flex items-center justify-center cursor-pointer">
-                  Shop New Arrivals
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Link to="/products">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="flex items-center justify-center cursor-pointer"
-                >
-                  Explore Collection
-                </Button>
-                </Link>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="aspect-[4/5] rounded-lg overflow-hidden shadow-2xl">
-                <img
-                  src="https://www.figma.com/file/enukksbkrTysqif2Te36M5/image/b26fea69ccfd8aa5825862cdb9604a4fb4930464"
-                  alt="Fashion model wearing the latest collection"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-4 -left-4 p-4 bg-white shadow-lg rounded-lg md:max-w-xs hidden md:block">
-                <p className="font-medium text-gray-900 mb-1">
-                  Summer Collection
-                </p>
-                <p className="text-sm text-gray-600 mb-2">Starting at $59.99</p>
-                <Link
-                  to="/products"
-                  className="text-blue-600 text-sm font-medium hover:underline flex items-center cursor-pointer"
-                >
-                  Shop Now
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-        </Container>
-      </div>
-      
- 
-      
-      <Promosection/>
-      {/* <ProductPage/> */}
-      <div className="relative h-[90vh] bg-gradient-to-r from-slate-800 to-slate-900 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{
-            backgroundImage:
-              "url(https://www.figma.com/file/enukksbkrTysqif2Te36M5/image/b26fea69ccfd8aa5825862cdb9604a4fb4930464)",
-          }}
-        />
-        
-        <div className="relative h-full container mx-auto px-4 flex flex-col justify-center">
-          <div className="max-w-xl">
-            <h1 className="text-5xl font-bold text-white mb-6 leading-tight">
-              Discover quality products for every need
-            </h1>
+import ProductCard from "../components/product/ProductCard";
+import { Button } from "../components/ui/button";
+import { products } from "../Data/products";
 
-            <p className="text-lg text-slate-200 mb-8">
-              Simple, elegant shopping experience with carefully curated
-              products.
-            </p>
-            <Link to="/products">
-              <button className="bg-black cursor-pointer text-white px-6 py-3 rounded-2xl shadow-lg hover:caret-amber-400  hover:bg-white hover:text-black transition-all duration-300 font-semibold">
-                Browse Products
-              </button>
-            </Link>
-          </div>
-        </div>
-      </div>
-      <div className="bg-slate-50 py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-slate-800 mb-6">
-            Shop with confidence
-          </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto mb-8">
-            Our carefully selected products are designed to meet your needs with
-            quality and reliability.
-          </p>
-
-          <Link to="/products">
-            <button size="lg">View All Products</button>
-          </Link>
-        </div>
-      </div>
-    </div>
+const Home = () => {
+  const featuredProducts = products.slice(0, 6);
+  const categories = Array.from(
+    new Set(products.map((product) => product.category?.name).filter(Boolean))
   );
-}
+
+  return (
+    <main className="w-full">
+      <section className="relative overflow-hidden border-b border-white/10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.12),_rgba(9,9,11,0.35)_48%,_rgba(9,9,11,0.96)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(0,0,0,0.82),rgba(0,0,0,0.42))]" />
+        <div className="absolute inset-0 bg-[url('https://i.pinimg.com/736x/b2/a3/e2/b2a3e289ef8054a8e5edcc0d4e6cc33d.jpg')] bg-no-repeat bg-center bg-[length:68%] opacity-35 blur-[1px] scale-105" />
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 md:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-24">
+          <div className="space-y-7">
+            <div className="space-y-5">
+              <p className="text-sm uppercase tracking-[0.3em] text-white/60">
+                Electronics store
+              </p>
+              <h1 className="max-w-3xl text-4xl font-black tracking-tight text-white md:text-6xl">
+                Premium electronics, sharper prices, and a darker storefront that feels modern.
+              </h1>
+              <p className="max-w-2xl text-base leading-7 text-white/75 md:text-lg">
+                Discover headphones, speakers, accessories, and everyday tech in a clean, high-contrast store designed for fast browsing and confident buying.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <Button asChild size="lg" className="rounded-full bg-white px-7 text-black hover:bg-zinc-200">
+                <Link to="#featured">Shop electronics</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-full border-white/20 bg-white/5 px-7 text-white hover:bg-white/10 hover:text-white">
+                <Link to="/products/568e41ab-5d2f-4318-bfac-8758e3555c94">Explore deal</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-8 pt-10 md:px-6">
+        <div className="grid gap-4 md:grid-cols-3">
+          {categories.map((category) => (
+            <div key={category} className="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-sm backdrop-blur">
+              <p className="text-sm uppercase tracking-[0.2em] text-white/45">Category</p>
+              <h3 className="mt-2 text-xl font-semibold text-white">{category}</h3>
+              <p className="mt-1 text-sm text-white/65">Hand-picked products built for everyday use.</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="featured" className="mx-auto max-w-7xl px-4 py-12 md:px-6 lg:py-16">
+        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-white/45">Featured products</p>
+            <h2 className="mt-2 text-3xl font-black tracking-tight text-white md:text-4xl">Popular electronics customers keep coming back for</h2>
+          </div>
+          <p className="max-w-xl text-sm leading-6 text-white/65">
+            A tighter storefront starts with a clear catalog. These are the strongest products in the collection, arranged for quick browsing and easy buying.
+          </p>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {featuredProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      </section>
+
+      <Promosection />
+
+      <section className="mx-auto max-w-7xl px-4 py-12 md:px-6 lg:py-16">
+        <div className="grid gap-6 rounded-[2rem] bg-white/5 px-6 py-8 text-white md:grid-cols-2 md:px-10 md:py-10">
+          <div>
+            <p className="text-sm uppercase tracking-[0.24em] text-white/65">Why shop here</p>
+            <h2 className="mt-3 text-3xl font-black tracking-tight md:text-4xl">A more complete experience for browsing and buying.</h2>
+          </div>
+          <div className="grid gap-3 text-sm text-white/80 sm:grid-cols-2">
+            {[
+              "Featured collections and product detail pages",
+              "Mobile-friendly navigation and layout",
+              "Clear pricing, stock status, and categories",
+              "Stronger visual hierarchy across the site",
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                <BadgeCheck className="mt-0.5 h-5 w-5 text-emerald-300" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+};
 
 export default Home;

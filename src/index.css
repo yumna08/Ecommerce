@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-/* 
+ 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -115,6 +115,14 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    background:
+      radial-gradient(circle at top left, rgba(34, 211, 238, 0.16), transparent 28%),
+      radial-gradient(circle at top right, rgba(168, 85, 247, 0.14), transparent 30%),
+      linear-gradient(180deg, #09090b 0%, #0a0a0e 38%, #111113 100%);
+    min-height: 100vh;
   }
-} */
+  a {
+    @apply no-underline;
+  }
+}

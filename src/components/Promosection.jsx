@@ -3,41 +3,41 @@ import { Button } from './ui/button'
 
 function Promosection() {
   return (
-    <section className="py-16 bg-black text-white">
-      <div  className='container mx-auto px-4 md:px-6 max-w-7xl'>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <section className="py-16 text-white">
+      <div className='mx-auto max-w-7xl px-4 md:px-6'>
+        <div className="grid grid-cols-1 gap-8 rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-[0_24px_70px_rgba(0,0,0,0.2)] backdrop-blur md:grid-cols-2 md:items-center md:p-10">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Summer Sale Up To 50% Off
+              Sound, style, and savings in one dark collection.
             </h2>
-            <p className="text-blue-100 mb-6 text-lg">
-              Limited time offer on our most popular seasonal items. Refresh your wardrobe with the latest trends at amazing prices.
+            <p className="mb-6 text-lg text-slate-300">
+              Explore featured headphones, speakers, and accessories chosen for a clean visual and a premium listening setup.
             </p>
             <Button 
               variant="outline" 
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-black font-medium rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-black-500 focus:ring-opacity-50"
+              className="rounded-full border-white/20 bg-white text-black font-medium transition-colors duration-200 hover:bg-zinc-200 hover:text-black"
             >
               Shop the Sale
             </Button>
           </div>
           
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-white rounded-lg p-6 text-center transition-transform hover:scale-105">
-              <h3 className="text-xl text-black font-bold mb-2">Free Shipping</h3>
-              <p className="text-black">On all orders over $50</p>
+            <div className="rounded-2xl bg-black/40 p-6 text-center transition-transform hover:scale-105">
+              <h3 className="text-xl font-bold mb-2 text-white">Fast Delivery</h3>
+              <p className="text-white/70">On all electronics over $50</p>
             </div>
-            <div className="bg-white rounded-lg p-6 text-center transition-transform hover:scale-105">
-              <h3 className="text-xl font-bold mb-2 text-black">30-Day Returns</h3>
-              <p className="text-black">Hassle-free return policy</p>
+            <div className="rounded-2xl bg-black/40 p-6 text-center transition-transform hover:scale-105">
+              <h3 className="text-xl font-bold mb-2 text-white">30-Day Returns</h3>
+              <p className="text-white/70">Hassle-free return policy</p>
             </div>
-            <div className="bg-white rounded-lg p-6 text-center transition-transform hover:scale-105">
-              <h3 className="text-xl font-bold mb-2 text-black">New Arrivals</h3>
-              <p className="text-black">Fresh styles weekly</p>
+            <div className="rounded-2xl bg-black/40 p-6 text-center transition-transform hover:scale-105">
+              <h3 className="text-xl font-bold mb-2 text-white">New Drops</h3>
+              <p className="text-white/70">Fresh tech weekly</p>
             </div>
-            <div className="bg-white rounded-lg p-6 text-center transition-transform hover:scale-105">
-              <h3 className="text-xl font-bold mb-2 text-black">Member Discount</h3>
-              <p className="text-black">15% off for members</p>
+            <div className="rounded-2xl bg-black/40 p-6 text-center transition-transform hover:scale-105">
+              <h3 className="text-xl font-bold mb-2 text-white">Member Discount</h3>
+              <p className="text-white/70">15% off for members</p>
             </div>
           </div>
         </div>

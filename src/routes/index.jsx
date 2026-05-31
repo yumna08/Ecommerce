@@ -1,23 +1,31 @@
-import { LogIn } from "lucide-react";
-import Fotter from "../components/layout/Fotter";
-import Navbar from "../components/layout/Navbar";
-import ProductDetail from "../components/product/ProductDetail";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
-import ProductPage from "../pages/ProductPage";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Fotter from "../components/layout/Fotter";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
+import Login from "../pages/Login";
+import Signup from "../pages/Signup";
+import ProductDetail from "../components/product/ProductDetail";
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Fotter";
 
-export default function RouteLayout() {
+const App = () => {
   return (
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/products" element={<ProductPage />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/products/:productId" element={<ProductDetail />} />
-        <Route path="/login" element={<LogIn />} />
-      </Routes>
-      <Fotter />
+      <div className="min-h-screen w-full">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/products/:productId" element={<ProductDetail />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
-}
+};
+
+export default App;

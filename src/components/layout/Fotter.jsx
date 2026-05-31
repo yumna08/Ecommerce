@@ -17,34 +17,33 @@ import { Link } from "react-router-dom";
 
 function Fotter() {
   return (
-    <footer className="bg-gray-900 text-white pt-12 pb-6">
-      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+    <footer className="border-t border-white/10 bg-[#09090b] pt-12 pb-6 text-white">
+      <div className="mx-auto w-full max-w-none px-4 md:px-6 lg:px-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">YIGZU</h3>
-            <p className="text-gray-400 mb-4">
-              Premium shopping experience with curated products for your
-              lifestyle.
+            <h3 className="text-xl font-bold mb-4">EthioShop</h3>
+            <p className="mb-4 text-white/65">
+              Premium electronics shopping with curated products for your setup.
             </p>
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-white/45 transition-colors hover:text-white"
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-white/45 transition-colors hover:text-white"
                 aria-label="Twitter"
               >
                 <Twitter size={20} />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-white/45 transition-colors hover:text-white"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
@@ -59,23 +58,23 @@ function Fotter() {
               <li>
                 <Link
                   to="/category/new-arrivals"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-white/55 transition-colors hover:text-white"
                 >
-                  New Arrivals
+                  Headphones
                 </Link>
               </li>
               <li>
                 <Link
                   to="/category/clothing"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-white/55 transition-colors hover:text-white"
                 >
-                  Clothing
+                  Speakers
                 </Link>
               </li>
               <li>
                 <Link
                   to="/category/accessories"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-white/55 transition-colors hover:text-white"
                 >
                   Accessories
                 </Link>
@@ -84,7 +83,7 @@ function Fotter() {
               <li>
                 <Link
                   to="/sale"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-white/55 transition-colors hover:text-white"
                 >
                   Sale
                 </Link>
@@ -99,7 +98,7 @@ function Fotter() {
               <li>
                 <Link
                   to="/about"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-white/55 transition-colors hover:text-white"
                 >
                   About Us
                 </Link>
@@ -107,7 +106,7 @@ function Fotter() {
               <li>
                 <Link
                   to="/contact"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-white/55 transition-colors hover:text-white"
                 >
                   Contact
                 </Link>
@@ -116,7 +115,7 @@ function Fotter() {
               <li>
                 <Link
                   to="/terms"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-white/55 transition-colors hover:text-white"
                 >
                   Terms & Conditions
                 </Link>
@@ -124,7 +123,7 @@ function Fotter() {
               <li>
                 <Link
                   to="/privacy"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-white/55 transition-colors hover:text-white"
                 >
                   Privacy Policy
                 </Link>
@@ -137,44 +136,44 @@ function Fotter() {
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-gray-400 mr-2 mt-0.5" />
-                <span className="text-gray-400">
+                <MapPin className="h-5 w-5 text-white/45 mr-2 mt-0.5" />
+                <span className="text-white/55">
                   123 Bole, Design District, Adama, ET 10001
                 </span>
               </li>
               <li className="flex items-center">
-                <Phone className="h-5 w-5 text-gray-400 mr-2" />
-                <span className="text-gray-400">+251-91223-4567</span>
+                <Phone className="h-5 w-5 text-white/45 mr-2" />
+                <span className="text-white/55">+251-91223-4567</span>
               </li>
               <li className="flex items-center">
-                <Mail className="h-5 w-5 text-gray-400 mr-2" />
-                <span className="text-gray-400">support@yigzu.com</span>
+                <Mail className="h-5 w-5 text-white/45 mr-2" />
+                <span className="text-white/55">support@EthioShop.com</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-6">
+        <div className="border-t border-white/10 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              &copy; {new Date().getFullYear()} YIGZU. All rights reserved.
+            <p className="text-white/45 text-sm mb-4 md:mb-0">
+              &copy; {new Date().getFullYear()} EthioShop. All rights reserved.
             </p>
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
+                className="text-white/45 hover:text-white text-sm transition-colors"
               >
                 Terms
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
+                className="text-white/45 hover:text-white text-sm transition-colors"
               >
                 Privacy
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
+                className="text-white/45 hover:text-white text-sm transition-colors"
               >
                 Cookies
               </a>

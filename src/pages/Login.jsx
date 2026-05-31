@@ -1,105 +1,36 @@
-import React from "react";
-import { Mail, Lock } from "lucide-react"; 
+import { Link } from "react-router-dom";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
 
 export default function Login() {
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-[url('https://t4.ftcdn.net/jpg/06/91/05/19/360_F_691051979_Xr9vx5g4lX59PT27nFe4Y7AHUuGh4i2S.jpg')] bg-cover bg-center">
-      <div className="bg-gray p-12 rounded-3xl border-2 border-gray-400 max-w-md w-full">
-        <header className="mb-10"> 
-          <h1 className="text-4xl font-bold text-gray-300">
-            Welcome Back
-          </h1>
-          <p className="text-gray-400 mt-3 text-lg">
-            Welcome back! Please Login.
+    <main className="w-full bg-[#09090b] text-white">
+      <section className="mx-auto w-full max-w-none px-4 py-16 md:px-6 lg:px-10 lg:py-20">
+        <div className="mx-auto max-w-md rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur md:p-8">
+          <p className="text-sm uppercase tracking-[0.28em] text-white/45">Login</p>
+          <h1 className="mt-3 text-3xl font-black tracking-tight">Welcome back</h1>
+          <p className="mt-2 text-sm leading-6 text-white/65">Sign in to continue shopping and manage your orders.</p>
+
+          <form className="mt-8 grid gap-5">
+            <div className="grid gap-2">
+              <Label htmlFor="email" className="text-white/75">Email</Label>
+              <Input id="email" type="email" placeholder="you@example.com" className="border-white/10 bg-black/20 text-white placeholder:text-white/30" />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="password" className="text-white/75">Password</Label>
+              <Input id="password" type="password" placeholder="Enter your password" className="border-white/10 bg-black/20 text-white placeholder:text-white/30" />
+            </div>
+            <Button className="rounded-full bg-white px-6 text-black hover:bg-zinc-200">
+              Log in
+            </Button>
+          </form>
+
+          <p className="mt-6 text-sm text-white/60">
+            Don’t have an account? <Link to="/signup" className="text-white underline underline-offset-4">Sign up</Link>
           </p>
-        </header>
-        <form className="space-y-7">
-        
-     
-          <div className="space-y-1.5">
-            <label htmlFor="email" className="block text-gray-400 font-medium text-lg">
-              Email
-            </label>
-            <div className="relative">
-              <Mail className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-              <input
-                id="email"
-                type="email"
-                className="w-full px-5 py-3.5 border-2 pl-10
-                       border-gray-100 rounded-3xl
-                       focus:border-blue-200 focus:ring-1
-                       focus:ring-blue-100 
-                       text-gray-300
-                       transition-all duration-200 outline-none"
-                placeholder="Enter your email"
-              />
-            </div>
-          </div>
-
-       
-          <div className="space-y-1.5">
-            <label htmlFor="password" className="block text-gray-400 font-medium text-lg">
-              Password
-            </label>
-            <div className="relative">
-              <Lock className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-              <input
-                id="password"
-                type="password"
-                className="w-full px-5 py-3.5 border-2 pl-10
-                       border-gray-100 rounded-3xl
-                       focus:border-blue-200 focus:ring-1
-                       focus:ring-blue-100
-                       text-gray-300 
-                       transition-all duration-200 outline-none"
-                placeholder="Enter your password"
-              />
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between pt-1">
-            <div className="flex items-center">
-              <input
-                id="remember"
-                type="checkbox"
-                className="h-5 w-5 rounded border-gray-300 text-blue-300 
-                         focus:ring-blue-300 transition"
-              />
-              <label
-                htmlFor="remember"
-                className="ml-3 text-gray-400 font-medium">
-                Remember me
-              </label>
-            </div>
-            <button
-              type="button"
-              className="text-blue-300 hover:text-blue-400 font-medium 
-                         transition-colors duration-200">
-              Forgot password?
-            </button>
-          </div>
-
-          <button
-            type="submit"
-            className="w-full mt-8 py-4
-                       bg-gray-500
-                       hover:bg-gray-600 
-                       text-white 
-                       font-semibold rounded-xl shadow-sm
-                       transform hover:-translate-y-0.5 transition-all 
-                       duration-200 active:translate-y-0">
-            Sign In
-          </button>
-        </form>
-
-        <p className="text-center text-gray-400 mt-10 text-sm">
-          Don't have an account?{" "}
-          <button 
-            className="text-blue-300 font-medium hover:bg-blue-400">
-            Sign up
-          </button>
-        </p>
-      </div>
-    </div>
+        </div>
+      </section>
+    </main>
   );
 }
